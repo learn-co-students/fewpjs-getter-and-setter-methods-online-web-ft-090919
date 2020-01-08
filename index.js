@@ -1,44 +1,38 @@
 
+const PI = Math.PI
 
 class Circle{
+
+
   constructor(radius){
     this.radius = radius
-    this._diameter = radius * 2
-    this._circumference = Math.PI * this._diameter
-    this._area = Math.PI * Math.pow(this.radius, 2)
   }
 
   set diameter(diameter){
     this._diameter = diameter
-    this.radius = this.diameter / 2
-    this._circumference = Math.PI * this._diameter
-    this.area = Math.PI * Math.pow(this.radius, 2)
+    this.radius = this._diameter / 2
   }
 
   get diameter(){
-    return this._diameter
+    return this.radius * 2
   }
 
   set circumference(circumference){
     this._circumference = circumference
-    this._diameter = this._circumference / Math.PI
-    this.radius = this._diameter / 2
-    this._area = Math.PI * Math.pow(this.radius, 2)
+    this.diameter = this._circumference / PI
   }
 
   get circumference(){
-    return this._circumference
+    return this.diameter * PI
   }
 
   set area(area){
     this._area = area
-    this.radius = Math.sqrt( this._area / Math.PI )
-    this._diameter = this.radius * 2
-    this._circumference = this._diameter * Math.PI
+    this.radius = Math.sqrt( this._area / PI )
   }
 
   get area(){
-    return this._area
+    return PI * Math.pow(this.radius, 2)
   }
 
 
